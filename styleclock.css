@@ -1,0 +1,91 @@
+*,*::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to right,orange,yellow);
+}
+body button{
+    height: 30px;
+    margin-left: 20px;
+    background: linear-gradient(red,white);
+    border:1px solid black;
+    cursor: pointer;
+}
+.Clock{
+    background-color:rgb(245, 245, 240,.8);
+    width:500px;
+    height:500px;
+    border-radius: 50%;
+    border:2px solid black;
+    position: relative;
+    margin-left: 30%;
+    font-size: 30px;
+    display: none;
+}
+body h1{
+    margin-left: 30%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.number{
+    --rotation:0;
+    position: absolute;
+    text-align: center;
+    height:100%;
+    width:100%;
+    transform: rotate(var(--rotation));
+    font-weight: bold;
+
+}
+.number1{--rotation:30deg;}
+.number2{--rotation:60deg;}
+.number3{--rotation:90deg;}
+.number4{--rotation:120deg;}
+.number5{--rotation:150deg;}
+.number6{--rotation:180deg;}
+.number7{--rotation:210deg;}
+.number8{--rotation:240deg;}
+.number9{--rotation:270deg;}
+.number10{--rotation:300deg;}
+.number11{--rotation:330deg;}
+.Clock .hand{
+    --rotation:0;
+    background-color: black;
+    position: absolute;
+    height: 50%;
+    width:10px;
+    left:50%;
+    bottom: 50%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin:bottom;
+    transform: translate(-50%) rotate(calc(var(--rotation)* 1deg));
+    z-index: 10;
+}
+.Clock::after{
+    content:'';
+    position:absolute;
+    background-color: black;
+    z-index:11;
+    width:20px;
+    height:20px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+.Clock .hand.second{
+width:3px;
+height: 45%;
+background-color: red;
+}
+.Clock .hand.minute{
+width:7px;
+height: 40%;
+background-color: rgb(12, 10, 10);
+}
+.Clock .hand.hour{
+width:10px;
+height: 35%;
+background-color: rgb(12, 10, 10);
+}
